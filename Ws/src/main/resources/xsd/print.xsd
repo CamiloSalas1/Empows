@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.Ws.com/emp"
+           targetNamespace="http://www.Ws.com/emp" elementFormDefault="qualified">
+    
+    <!-- Imprimir Factura -->
+    <xs:element name="printRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigo_usuario" type="xs:int"/>
+                <xs:element name="instancia" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="printResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="factura" type="tns:factura"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="factura">
+        <xs:sequence>
+            <xs:element name="codigo_usuario" type="xs:int"/>
+            <xs:element name="cadena_rta" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
